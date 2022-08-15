@@ -27,6 +27,8 @@ print(status)
 * Bulk processing and automatized upload of files to stutterbuddy.ch
 * submit videos or audio both as links or as files
 * retrieve status of jobs
+* coming soon: use as CLI tool
+* coming soon: convert files locally
 
 ## Dependencies
 * requests-toolbelt
