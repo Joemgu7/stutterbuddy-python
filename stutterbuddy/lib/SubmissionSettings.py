@@ -1,3 +1,6 @@
+from dict2xml import dict2xml
+import json
+
 class SubmissionSettings:
     """
         A class to store the settings for a job.
@@ -28,6 +31,12 @@ class SubmissionSettings:
         self.resolution = settings_dict['resolution']
         self.framerate = settings_dict['framerate']
 
+    def __str__(self):
+        return str(self.to_dict())
+
+    def __repr__(self):
+        return str(self.to_dict())
+
     def to_dict(self):
         return {
             'model_version': self.model_version,
@@ -42,8 +51,8 @@ class SubmissionSettings:
             'framerate': self.framerate
         }
 
-    def __str__(self):
-        return str(self.to_dict())
+    def to_xml(self):
+        return dict2xml(self.to_dict())
 
-    def __repr__(self):
-        return str(self.to_dict())
+    def to_json(self):
+        return json.dumps(self.to_dict())

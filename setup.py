@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="stutterbuddy",
-    version="0.1.0",
+    version="0.2.0",
     author="Jonas Briguet",
     author_email="briguetjo@yahoo.de",
     description="Automate video editing with Stutterbuddy",
@@ -23,6 +23,7 @@ setuptools.setup(
         'requests',
         'requests-toolbelt',
         'urllib3',
+        'dict2xml'
     ],
     keywords='stutterbuddy video editing automation auto-editor ai machine-learning',
     project_urls={

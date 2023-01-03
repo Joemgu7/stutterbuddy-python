@@ -2,7 +2,11 @@ import requests
 from requests_toolbelt import MultipartEncoderMonitor
 import urllib.parse
 import mimetypes
-from .Jobs import SubmissionSettings
+
+from .SubmissionSettings import SubmissionSettings
+from .Job import Job
+from .Asset import Asset
+
 
 class Stutterbuddy():
     """A class to interact with the stutterbuddy.ch api"""
@@ -86,7 +90,7 @@ class Stutterbuddy():
 
         return r['job_ids']
 
-    def get_all_jobs(self, verbose=1) -> list:
+    def get_all_jobs(self, verbose=1) -> list[Job]:
         """
             A function to get all jobs from the user.
             
@@ -103,9 +107,9 @@ class Stutterbuddy():
 
         r = r.json()
 
-        return r['jobs']        
+        return list(map(lambda x: Job(x), r['jobs']))
 
-    def get_all_assets(self, verbose=1) -> list:
+    def get_all_assets(self, verbose=1) -> list[Asset]:
         """
             A function to get all assets from the user.
             
@@ -122,4 +126,4 @@ class Stutterbuddy():
 
         r = r.json()
 
-        return r['assets']
+        return list(map(lambda x: Asset(x), r['assets']))
