@@ -6,9 +6,6 @@
     This is a library with functions to interact with the stutterbuddy.ch api 
 """
 
-from .lib.SubmissionSettings import SubmissionSettings
-from .lib.Stutterbuddy import Stutterbuddy
-from .lib.Job import Job
-from .lib.Asset import Asset
+from lib import *
 
 
