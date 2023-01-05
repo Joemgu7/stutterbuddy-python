@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="stutterbuddy",
-    version="0.2.1",
+    version="0.2.2",
     author="Jonas Briguet",
     author_email="briguetjo@yahoo.de",
     description="Automate video editing with Stutterbuddy",
